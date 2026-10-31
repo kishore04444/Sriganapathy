@@ -7,11 +7,13 @@ Premium bilingual React/Vite website for Sri Ganapathy Banana Commission Mundy i
 Requires Node.js 22 or a current LTS release.
 
 ```bash
-npm install
+npm ci
 npm run dev
 npm run build
 npm run preview
 ```
+
+`npm run build` is network-free after dependencies are installed. It runs content validation, Vite, and full React prerendering. `npm run images` is an explicit maintainer task that downloads the credited reference images and regenerates WebP assets; run it only when intentionally refreshing the committed images.
 
 ## Content editing
 
@@ -20,12 +22,13 @@ npm run preview
 - Today's rates board: `data/rates.json`
 - Owner-supplied gallery images: `data/gallery.json`
 - Add a rate by setting `lastUpdated` and adding entries with `variety`, `grade` and `priceRange`.
-- The variety list and FAQ data are in the language content files and must be kept structurally identical. The build checks English and Tamil keys.
+- The variety list, FAQ data, ripening stages and interaction labels are in the language content files and must be kept structurally identical. The build checks English and Tamil keys.
 - The form opens a pre-filled WhatsApp message; it does not store submissions.
+- Service-page source content is maintained in `scripts/generate-service-pages.mjs`; run `node scripts/generate-service-pages.mjs` after editing it.
 
 ## Photos
 
-Homepage images are local WebP assets under `public/images/`. They are neutral Unsplash reference images, not photographs of Sri Ganapathy's farm, mundy or storage facility. Replace them with approved owner photographs when available. Add approved gallery entries to `data/gallery.json` with `src`, `width`, `height`, `alt` and optional `srcSet`; the gallery stays hidden while the list is empty.
+Homepage images are local WebP assets under `public/images/`. They are neutral banana reference images, not photographs of Sri Ganapathy's farm, mundy or storage facility. Replace them with approved owner photographs when available. Add approved gallery entries to `data/gallery.json` with `src`, `width`, `height`, `alt` and optional `srcSet`; the gallery stays hidden while the list is empty. The owner should compress approved photographs to 480/800/1200 WebP candidates before adding them.
 
 Current neutral image credits:
 
@@ -36,9 +39,9 @@ Current neutral image credits:
 - [Green bananas stacked for ripening reference](https://www.pexels.com/photo/34454659/) — Pexels image source `photo-34454659`
 - [Hanging bananas at a market](https://www.pexels.com/photo/36204961/) — Pexels image source `photo-36204961`
 
-The hot-ripening and cool-storage cards are also neutral reference imagery until the owner supplies facility photographs. The image preparation script downloads the source files and creates real WebP candidates at 480, 800 and 1200 pixels.
+The hot-ripening and cool-storage cards use neutral banana reference imagery and do not depict the owner's rooms. The image preparation script downloads the source files and creates real WebP candidates at 480, 800 and 1200 pixels.
 
-## Owner TODOs
+## Owner checklist
 
 - Confirm the auction opening time.
 - Confirm whether a minimum quantity applies.
@@ -48,6 +51,7 @@ The hot-ripening and cool-storage cards are also neutral reference imagery until
 - Update `data/rates.json` whenever the rates board should be published.
 - Confirm business hours before adding them to structured data.
 - Confirm any years-in-business statement before publishing it.
+- Confirm the process for updating rates and the person responsible for publishing them.
 
 ## Deployment
 
