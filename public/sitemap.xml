@@ -5,4 +5,8 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url><loc>https://sriganapathy-lilac.vercel.app/banana-wholesale-coimbatore/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sriganapathy-lilac.vercel.app/banana-procurement/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sriganapathy-lilac.vercel.app/banana-storage/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sriganapathy-lilac.vercel.app/institutional-banana-supply/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
