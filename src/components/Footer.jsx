@@ -1,0 +1,8 @@
+import { Leaf, MapPin, MessageCircle, Phone } from 'lucide-react';
+const phone = '+919842466544';
+const whatsapp = 'https://wa.me/919842466544';
+const maps = 'https://www.google.com/maps/dir/?api=1&destination=51-52%2C+8th+Street+Extension%2C+Subbana+Gounder+Layout%2C+New+Siddhapudur%2C+Coimbatore%2C+Tamil+Nadu+641012';
+export function Footer({ t }) {
+  const services = [['/banana-procurement/', t.labels.serviceProcurement], ['/banana-storage/', t.labels.serviceStorage], ['/banana-wholesale-coimbatore/', t.labels.serviceWholesale], ['/institutional-banana-supply/', t.labels.serviceInstitutional]];
+  return <footer className="footer"><div className="footer-top"><a className="brand footer-brand" href="#top"><span className="brand-mark"><Leaf size={21} fill="currentColor" /></span><span><b>SRI GANAPATHY</b><small>Banana Trading &amp; Distribution</small></span></a><p>{t.footer}</p><div><h3>{t.labels.services}</h3><div className="footer-services">{services.map(([href, label]) => <a key={href} href={href}>{label}</a>)}</div></div><div className="footer-actions"><a href={maps} target="_blank" rel="noreferrer" aria-label={t.labels.footerDirections}><MapPin size={17} /></a><a href={`tel:${phone}`} aria-label={t.labels.call}><Phone size={17} /></a><a href={whatsapp} target="_blank" rel="noreferrer" aria-label={t.labels.whatsapp}><MessageCircle size={17} /></a></div></div><div className="footer-bottom"><span>51–52, 8th Street Extension, Subbana Gounder Layout, New Siddhapudur, Coimbatore – 641012</span><span>© {new Date().getFullYear()} Sri Ganapathy Banana Commission Mundy</span></div></footer>;
+}

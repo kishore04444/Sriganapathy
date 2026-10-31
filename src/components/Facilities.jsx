@@ -1,0 +1,4 @@
+import { ArrowUpRight, Truck, Warehouse } from 'lucide-react';
+export function Facilities({ t, jump }) {
+  return <section className="facilities section" id="facilities"><div className="section-heading"><div><div className="eyebrow light">{t.facilitiesKicker}</div><h2>{t.facilitiesTitle}</h2></div><p>{t.facilitiesText}</p></div><div className="facility-grid"><article className="facility-card"><div className="facility-icon"><Warehouse /></div><h3>{t.hot}</h3><p>{t.hotText}</p><button className="card-link" onClick={() => jump('buyer')}>{t.ask} <ArrowUpRight size={15} /></button></article><article className="facility-card pale"><div className="facility-icon"><Truck /></div><h3>{t.cold}</h3><p>{t.coldText}</p></article></div><div className="ripening"><b>{t.stages[0]}</b><span /><b>{t.stages[1]}</b><span /><b>{t.stages[2]}</b></div></section>;
+}

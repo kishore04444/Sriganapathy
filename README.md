@@ -18,13 +18,14 @@ npm run preview
 - English homepage copy: `src/content/en.js`
 - Tamil homepage copy: `src/content/ta.js`
 - Today's rates board: `data/rates.json`
+- Owner-supplied gallery images: `data/gallery.json`
 - Add a rate by setting `lastUpdated` and adding entries with `variety`, `grade` and `priceRange`.
-- The variety list and FAQ data are in the language content files and must be kept structurally identical.
+- The variety list and FAQ data are in the language content files and must be kept structurally identical. The build checks English and Tamil keys.
 - The form opens a pre-filled WhatsApp message; it does not store submissions.
 
 ## Photos
 
-The current homepage uses neutral externally hosted imagery and a clearly marked gallery placeholder. Replace these URLs in `src/main.jsx` with approved owner photographs when available. Do not present stock imagery as Sri Ganapathy's farm, mundy or storage facility. For production performance, add approved WebP or AVIF files under `public/images/`, then use local paths with explicit `width`, `height`, `loading` and `srcset` values.
+Homepage images are local WebP assets under `public/images/`. Replace them with approved owner photographs when available. Do not present stock imagery as Sri Ganapathy's farm, mundy or storage facility. Add approved gallery entries to `data/gallery.json` with `src`, `width`, `height`, `alt` and optional `srcSet`; the gallery stays hidden while the list is empty.
 
 ## Owner TODOs
 
@@ -32,6 +33,7 @@ The current homepage uses neutral externally hosted imagery and a clearly marked
 - Confirm whether a minimum quantity applies.
 - Confirm payment terms.
 - Add approved farm, mundy, hot-ripening and cold-storage photographs.
+- Add approved gallery entries and meaningful bilingual alt text.
 - Update `data/rates.json` whenever the rates board should be published.
 - Confirm business hours before adding them to structured data.
 - Confirm any years-in-business statement before publishing it.

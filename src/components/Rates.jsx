@@ -1,0 +1,3 @@
+export function Rates({ t, ratesData }) {
+  return <section className="rates section"><div className="rates-head"><div className="eyebrow light">{t.ratesKicker}</div><h2>{t.ratesTitle}</h2><p>{t.ratesText}</p></div><div className="rates-board">{ratesData.rates.length ? ratesData.rates.map((rate) => <div className="rate-row" key={rate.variety}><b>{rate.variety}</b><span>{rate.grade}</span><strong>{rate.priceRange}</strong></div>) : <div className="empty-rate"><span>₹</span><b>{t.ratesEmpty}</b><p>{t.ratesText}</p></div>}{ratesData.lastUpdated && <small>{t.lastUpdated}: {ratesData.lastUpdated}</small>}</div></section>;
+}
