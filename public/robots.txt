@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://sriganapathy-lilac.vercel.app/sitemap.xml

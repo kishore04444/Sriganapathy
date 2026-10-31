@@ -4,32 +4,37 @@ A responsive, bilingual (English/Tamil) business website for Sri Ganapathy Banan
 
 ## Run locally
 
+Requires Node.js 22 or a current LTS release.
+
 ```bash
 npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite. Create a production build with `npm run build`, or preview it with `npm run preview`.
+Open the local URL printed by Vite. Create a production build with `npm run build`, or test the production build locally with `npm run preview`.
 
 ## Included
 
-- Responsive marketing site with procurement, auction, storage/ripening and distribution content
-- English/Tamil toggle with language persistence in `localStorage`
+- Responsive business website with procurement, auction, storage/ripening and distribution information
+- English/Tamil language toggle with language persistence in `localStorage`
 - Call and WhatsApp links using the supplied business number
-- Enquiry form that opens a pre-filled WhatsApp message with the submitted details
-- Semantic sections, keyboard-accessible controls and responsive layout
-- No invented business statistics, certifications, prices or testimonials
+- Enquiry form that opens a pre-filled WhatsApp message (no submissions are stored by this site)
+- Address-based Google Maps directions
+- SEO metadata, canonical URL, Open Graph/Twitter metadata, `robots.txt` and XML sitemap
+- Lazy loading for below-the-fold images and high-priority loading for the hero image
+- Security and immutable asset-cache headers in `vercel.json`
 
-The enquiry form opens WhatsApp because no backend or CRM endpoint was supplied. The direct phone, WhatsApp and Google Maps links are ready for production use.
+## Deploy to Vercel
 
-## Cloudflare Pages
+This is a Vite static frontend. Import the repository into Vercel and use these settings (Vercel usually detects them automatically):
 
-The project includes [`wrangler.toml`](./wrangler.toml), [`public/_headers`](./public/_headers), and [`public/robots.txt`](./public/robots.txt).
-
-For Cloudflare Pages, use:
-
+- Framework preset: **Vite**
 - Build command: `npm run build`
-- Build output directory: `dist`
-- Node.js version: `22`
+- Output directory: `dist`
+- Install command: `npm install`
 
-The `_headers` file adds basic security headers and immutable caching for hashed assets. Add a canonical URL and absolute Open Graph URL in `index.html` when the final domain is known.
+After deployment, check the production URL, WhatsApp enquiry flow, phone link, map directions and both language modes. If the domain changes, update the canonical URL, Open Graph URL, sitemap and `robots.txt` to match the new production domain.
+
+## Image note
+
+The current design references externally hosted image URLs. Keep the image providers and their applicable usage/licensing terms in mind. For the most reliable production setup, replace these URLs with approved business photographs stored under `public/images/`; do not use photographs of another facility as proof of your own storage or premises.
