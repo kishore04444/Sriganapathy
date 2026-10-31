@@ -14,6 +14,11 @@ const sources = {
 };
 const widths = [480, 800, 1200];
 
+if (!process.argv.includes('--download')) {
+  console.log('Image generation requires --download and is intentionally separate from npm run build.');
+  process.exit(0);
+}
+
 await mkdir(output, { recursive: true });
 for (const [name, url] of Object.entries(sources)) {
   const response = await fetch(url);

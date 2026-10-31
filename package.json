@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite --host=127.0.0.1",
-    "build": "node scripts/check-content.mjs && node scripts/prepare-images.mjs && node scripts/prepare-og.mjs && vite build && node scripts/prerender.mjs",
+    "build": "node scripts/check-content.mjs && vite build && node scripts/prerender.mjs",
+    "images": "node scripts/prepare-images.mjs --download",
     "preview": "vite preview"
   },
   "keywords": [],
